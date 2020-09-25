@@ -21,7 +21,7 @@ function changeContent(url, filter) {
           <div class="card-body">\
             <h5 class="card-title">${o["nombre"]}</h5>\
             <p class="card-text"><strong>Descripcion:</strong> ${o["descripcion"]}</p>\
-            <p class="card-text"><strong>Precio:</strong> ${o["precio"]}</p>\
+            <p class="card-text"><strong>Precio:</strong> $${o["precio"]}</p>\
             <p class="card-text"><strong>Calificación:</strong> ${o["calificacion"]} estrellas</p>\
             <button onclick="agregarProd('${o["precio"]}', '${o["nombre"]}')" class="btn">AGREGAR</button>
           </div>\
@@ -113,5 +113,5 @@ function cargarCarrito() {
 function cancelarPedido() {
   location.reload();
   carrito = [];
-  n_items.innerHTML = "";
+  n_items.innerHTML = "0 artículos";
 }

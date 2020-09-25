@@ -59,7 +59,7 @@ async function registrarse() {
     }
     if (!existe) {
       alert("Gracias por crear una cuenta");
-      location.href = "indexConInicio.html";
+      location.href = "InicioSesion/indexConInicio.html";
     }
   }
   else {

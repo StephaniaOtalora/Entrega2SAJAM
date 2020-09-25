@@ -172,8 +172,8 @@ animales = [o.__dict__ for o in animales]
 
 # Imprimir todos los objetos de una lista
 resp = "["
-for o in p_gatos:
-    resp += o + ",\n"
+for o in paseadores:
+    resp += str(o) + ",\n"
 resp = resp[:-2]
 resp += "]"
 print(resp)

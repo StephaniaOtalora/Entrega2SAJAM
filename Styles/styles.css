@@ -7,9 +7,11 @@
   --beige: #f2e3d5;
   --breakpoint-sm: 240 px;
 }
-
+.color1{
+color: var(--beige);
+};
 .paseadorFoto {
-  height: 280px;
+  height: 80%;
 }
 .btncards {
   margin: auto;
@@ -28,11 +30,10 @@
 }
 
 .filtroNombre{
-  font-size:min(3.2vw, 25px);
+  font-size:max(1vw, 17px);
 }
-
 .listafiltro {
-  font-size:min(2.5vw, 20px);
+  font-size:max(1vw, 15px);
   text-align: center;
   justify-content: center;
   align-items: center;
@@ -49,6 +50,9 @@
 .paseadorcard {
   background-color: var(--brown);
   color: white;
+}
+.dorado{
+  color: var(--lightBrown);
 }
 
 .menu {
@@ -115,6 +119,7 @@
 .footer {
   background-color: var(--brown);
   color: white;
+  padding: 10px;
 }
 
 .correo {
@@ -154,6 +159,11 @@
   text-align: center;
   background-color: var(--brown);
   color: var(--beige);
+}
+.btn2 {
+  text-align: center;
+  background-color: var(--lightBrown);
+  color: var(--brown);
 }
 
 h6 {
@@ -258,5 +268,10 @@ form {
 }
 
 .btnhome {
+  color: var(--brown);
+}
+
+strong[id="n_items"]:hover {
+  text-decoration: none;
   color: var(--brown);
 }

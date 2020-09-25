@@ -88,16 +88,9 @@
               </li>
             </ul>
 
-            <div class="row izq">
+            <div class="row izq text-right">
               <a href="../index.html">
                 <button class="btn menu2 hvr-shadow" type="button">Cerrar Sesión</button>
-              </a>
-              <a onclick="cargarCarrito()" href="#" data-toggle="modal" data-target="#exampleModal">
-                <svg width="2.5em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                  <path fill-rule="evenodd"
-                    d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l.5 2H5V5H3.14zM6 5v2h2V5H6zm3 0v2h2V5H9zm3 0v2h1.36l.5-2H12zm1.11 3H12v2h.61l.5-2zM11 8H9v2h2V8zM8 8H6v2h2V8zM5 8H3.89l.5 2H5V8zm0 5a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z" />
-                </svg>
-                <span id="n_items"></span>
               </a>
             </div>
           </div>
@@ -116,12 +109,24 @@
         </h1>
         <hr>
         <div class="row">
-          <div style="background-color: #D9AB73" class="col-3">
+          <div style="background-color: #d9c5b4" class="col-sm-12 col-md-3">
+            <hr>
+            <h3 class="text-center">Lista de articulos</h3>
+            <hr>
+            <p class="text-center">Ver productos selecionados</p>
+            <div class="text-center">
+              <a onclick="cargarCarrito()" href="#" data-toggle="modal" data-target="#exampleModal" class="cafe">
+                <img class="navbar-brand" src="../Imagenes/carro-de-la-compra.png" alt="Logo" width="7%" />
+                <strong id="n_items">0 artículos</strong>
+              </a></div>
+            <hr>
+            <h4 class="text-center">Categorias</h4>
+            <hr>
             <div class="accordion" id="categorias">
               <div class="card-header" id="headingOne">
                 <h2 class="mb-0">
-                  <button class="btn rounded-0 btn-block" type="button" data-toggle="collapse" data-target="#perros"
-                    aria-expanded="true" aria-controls="perros" id="perros_but">
+                  <button class="btn rounded-0 btn-block filtroNombre" type="button" data-toggle="collapse"
+                    data-target="#perros" aria-expanded="true" aria-controls="perros" id="perros_but">
                     Perros
                   </button>
                 </h2>
@@ -136,8 +141,8 @@
               </div>
               <div class="card-header" id="headingOne">
                 <h2 class="mb-0">
-                  <button class="btn rounded-0 btn-block" type="button" data-toggle="collapse" data-target="#gatos"
-                    aria-expanded="true" aria-controls="gatos" id="gatos_but">
+                  <button class="btn rounded-0 btn-block filtroNombre" type="button" data-toggle="collapse"
+                    data-target="#gatos" aria-expanded="true" aria-controls="gatos" id="gatos_but">
                     Gatos
                   </button>
                 </h2>
@@ -152,8 +157,8 @@
               </div>
               <div class="card-header" id="headingOne">
                 <h2 class="mb-0">
-                  <button class="btn rounded-0 btn-block" type="button" data-toggle="collapse" data-target="#otros"
-                    aria-expanded="true" aria-controls="otros" id="otros_but">
+                  <button class="btn rounded-0 btn-block filtroNombre" type="button" data-toggle="collapse"
+                    data-target="#otros" aria-expanded="true" aria-controls="otros" id="otros_but">
                     Otros
                   </button>
                 </h2>
@@ -180,7 +185,7 @@
         <div class="col">
           <h6>Contáctanos</h6>
           <p>
-            Tel:3000000<br />
+            Tel: 3000000<br />
             Correo:
             <a class="correo" href="mailto: pets@gmail.com">pets@gmail.com</a>
           </p>

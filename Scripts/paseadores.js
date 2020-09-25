@@ -3,7 +3,7 @@ let mascotaCuidado;
 
 async function readJson() {
   let response = await fetch(
-    "https://gist.githubusercontent.com/NicolasAbo17/a69b6e8ed9f372dbc5dbfb5759b836a8/raw/0691c94f3720d92ec8a8822bc89bd1f0a0b83b4b/paseadores.json"
+    "https://gist.githubusercontent.com/NicolasAbo17/a69b6e8ed9f372dbc5dbfb5759b836a8/raw/paseadores.json"
   );
   let data = await response.json();
   return data;
@@ -14,8 +14,9 @@ readJson().then((archivo) => {
     var tarjetas = document.getElementsByClassName("cards")[0];
 
     mascota.cuidados.forEach((cuidado) => {
-      tarjetas.innerHTML += `<div class ="container-fluid" id="${mascota.mascota + cuidado.tipo + "Cards"
-        }"> </div>`;
+      tarjetas.innerHTML += `<div class ="container-fluid" id="${
+        mascota.mascota + cuidado.tipo + "Cards"
+      }"> </div>`;
       var tarjetasPaseadores = document.getElementById(
         mascota.mascota + cuidado.tipo + "Cards"
       );
@@ -23,17 +24,22 @@ readJson().then((archivo) => {
       cuidado.paseadores.forEach((paseador) => {
         const card = document.createElement("div");
         card.classList = "card-body ";
+        let comentarios =
+          "<h5>Anónimo:</h5><p>" +
+          paseador.comentarios.join("</p><h5>Anónimo:</h5><p>") +
+          "</p>";
 
         // Construct card content
         const content = `
-          <div class="paseadorcard mb-3 container-fluid">
+          <div class="paseadorcard mb-3 container-fluid h-auto">
             <div class="row">
               <div class="col-md-4">
-                <img src="${paseador.foto}" class="w-100 paseadorFoto">
+                <img src="${paseador.foto}" class="w-100 paseadorFoto mt-4">
               </div>
               <div class="col-md-8">
                 <div class="paseadorinfo card-block px-3 mt-4">
                   <h4 class="card-title">${paseador.nombre}</h4>
+                  <p class="card-text">Ubicación: ${paseador.ciudad}. </p>
                   <p class="card-text">Tiempo de experiencia: ${paseador.experiencia}. </p>
                   <p class="card-text">Sobre mi: ${paseador.descripcion}.</p>
                   <p class="card-text">Rating: ${paseador.valoracion} estrellas.</p>
@@ -43,7 +49,7 @@ readJson().then((archivo) => {
                     </div>
                     <div class="col">
 
-                    <a class="btncards" data-toggle="modal" data-target="#MasInfo${paseador.nombre}">Más información</a>
+                    <a class="btncards" data-toggle="modal" data-target="#MasInfo${paseador.nombre}">Comentarios sobre ${paseador.nombre}</a>
                     </div>
 
                     <!-- Modal -->
@@ -52,7 +58,7 @@ readJson().then((archivo) => {
                         <div class="modal-content beigeBackground cafe">
                           <div class="modal-header">
                             <h5 class="modal-title" id="exampleModalLabel ">Gracias por tu interés</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <button type="button" class="btn close" data-dismiss="modal" aria-label="Close">
                               <span aria-hidden="true">&times;</span>
                             </button>
                           </div>
@@ -72,15 +78,13 @@ readJson().then((archivo) => {
                       <div class="modal-dialog " role="document">
                         <div class="modal-content beigeBackground cafe">
                           <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel ">${paseador.nombre}</h5>
+                            <h5 class="modal-title" id="exampleModalLabel ">Comentarios sobre ${paseador.nombre}</h5>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                               <span aria-hidden="true">&times;</span>
                             </button>
                           </div>
                           <div class="modal-body ">
-                          ${paseador.nombre} es de ${paseador.ciudad}, se describe así:
-                          <br>
-                          ${paseador.descripcion}
+                          ${comentarios}
                           </div>
                           <div class="modal-footer">
                           </div>
