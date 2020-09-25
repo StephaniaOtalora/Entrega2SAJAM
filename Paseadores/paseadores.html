@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
+  <link rel="icon" type="image/png" href="../Imagenes/Logo.png" />
+  <link href="../Styles/styles.css" rel="stylesheet" type="text/css" />
+  <link href="https://fonts.googleapis.com/css2?family=Acme&family=Abel&display=swap" rel="stylesheet" />
+  <title>Paseadores</title>
+</head>
+
+<body>
+  <div class="container-fluid">
+    <header class="letra2">
+      <div class="row">
+        <nav class="navbar navbar-expand-lg menu">
+          <img class="navbar-brand" src="../Imagenes/Logo.png" alt="Logo" width="3%" />
+
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <svg width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd"
+                d="M2.5 11.5A.5.5 0 0 1 3 11h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 3 7h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 3 3h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z" />
+            </svg>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+              <li class="nav-item">
+                <a class="nav-link menu1" href="../InicioSesion/indexConInicio.html">Inicio <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link menu1" href="../Tienda/Tienda.html">Tienda</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link menu1 active" href="../Paseadores/paseadores.html">
+                  Solicita un Cuidador
+                </a>
+              </li>
+            </ul>
+            <div class="row izq" id="Registro">
+              <a href="../index.html">
+                <button class="btn menu2 hvr-shadow" type="button">Cerrar Sesión</button>
+              </a>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <!--Barra lateral izquierda-->
+      <hr />
+      <h1 class="text-center cafe">
+        <img class="navbar-brand" src="../Imagenes/caminando.png" alt="Logo" width="5%" />
+        ¡Encuentra acá toda la información de paseadores!
+        <img class="navbar-brand" src="../Imagenes/caminando.png" alt="Logo" width="5%" />
+      </h1>
+      <hr />
+      <div class="row no-gutters">
+        <div style="background-color: #d9ab73" class="col-3">
+          <div class="accordion" id="categorias">
+            <div class="card-header" id="headingOne">
+              <h2 class="mb-0">
+                <button class="btn rounded-0 btn-block filtroNombre" type="button" data-toggle="collapse" data-target="#perros"
+                  aria-expanded="true" aria-controls="perros">
+                  Perros
+                </button>
+              </h2>
+            </div>
+
+            <div id="perros" class="collapse multi-collapse" aria-labelledby="headingOne" data-parent="#categorias">
+              <div class="listafiltro list-group">
+                <a href="#" class="filtroitem list-group-item list-group-item-action"
+                  onclick="cambiarPaseadores('Perros', 'Paseo')">PASEO</a>
+                <a href="#" class="filtroitem list-group-item list-group-item-action"
+                  onclick="cambiarPaseadores('Perros', 'Residencia')">RESIDENCIA</a>
+                <a href="#" class="filtroitem list-group-item list-group-item-action"
+                  onclick="cambiarPaseadores('Perros', 'Entrenamiento')">ENTRENAMIENTO</a>
+              </div>
+            </div>
+            <div class="card-header" id="headingOne">
+              <h2 class="mb-0">
+                <button class="btn rounded-0 btn-block filtroNombre" type="button" data-toggle="collapse" data-target="#gatos"
+                  aria-expanded="true" aria-controls="gatos">
+                  Gatos
+                </button>
+              </h2>
+            </div>
+
+            <div id="gatos" class="collapse multi-collapse" aria-labelledby="headingOne" data-parent="#categorias">
+              <div class="listafiltro list-group">
+                <a href="#" class="filtroitem list-group-item list-group-item-action"
+                  onclick="cambiarPaseadores('Gatos', 'Residencia')">RESIDENCIA</a>
+              </div>
+            </div>
+            <div class="card-header" id="headingOne">
+              <h2 class="mb-0">
+                <button class="btn rounded-0 btn-block filtroNombre" type="button" data-toggle="collapse" data-target="#otros"
+                  aria-expanded="true" aria-controls="otros">
+                  Otros
+                </button>
+              </h2>
+            </div>
+
+            <div id="otros" class="collapse multi-collapse" aria-labelledby="headingOne" data-parent="#categorias">
+              <div class="listafiltro list-group">
+                <a href="#" class="filtroitem list-group-item list-group-item-action"
+                  onclick="cambiarPaseadores('Otros', 'Residencia')">RESIDENCIA</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="container">
+            <div class="row no-gutters cards"></div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <div class="row footer">
+        <div class="col">
+          <h6>Contáctanos</h6>
+          <p>
+            Tel:3000000<br />
+            Correo:
+            <a class="correo" href="mailto: pets@gmail.com">pets@gmail.com</a>
+          </p>
+        </div>
+        <div class="col">
+          <img src="../Imagenes/Logo.png" alt="Logo" width="100px" />
+        </div>
+      </div>
+    </footer>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+    integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+    crossorigin="anonymous"></script>
+  <script src="../Scripts/paseadores.js"></script>
+  <script src="../Scripts/index.js"></script>
+</body>
+
+</html>

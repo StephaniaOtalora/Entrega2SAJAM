@@ -1,0 +1,66 @@
+[
+  {
+    "id": "1",
+    "first_name": "admin",
+    "last_name": "admin",
+    "email": "admin",
+    "gender": "Male",
+    "contrasena": "admin"
+  },
+  {
+    "id": "86-772-7202",
+    "first_name": "Parrnell",
+    "last_name": "Spykings",
+    "email": "pspykings0@irs.gov",
+    "gender": "Male",
+    "contrasena": "sMDP19TieOLo"
+  },
+  {
+    "id": "82-671-9229",
+    "first_name": "Sandy",
+    "last_name": "Lilbourne",
+    "email": "slilbourne1@dailymail.co.uk",
+    "gender": "Male",
+    "contrasena": "MUIOiKbBVzx1"
+  },
+  {
+    "id": "11-355-0046",
+    "first_name": "Hamnet",
+    "last_name": "Head",
+    "email": "hhead2@rediff.com",
+    "gender": "Male",
+    "contrasena": "NTjg7ONfZEpY"
+  },
+  {
+    "id": "28-294-4846",
+    "first_name": "De",
+    "last_name": "Coxhead",
+    "email": "dcoxhead3@nationalgeographic.com",
+    "gender": "Female",
+    "contrasena": "0uYv1urgQhRq"
+  },
+  {
+    "id": "09-108-3954",
+    "first_name": "Stacey",
+    "last_name": "Kilbey",
+    "email": "skilbey4@yellowpages.com",
+    "gender": "Female",
+    "contrasena": "wZH0mhEOVP9T"
+  },
+  {
+    "id": "69-644-3088",
+    "first_name": "Appolonia",
+    "last_name": "Paylie",
+    "email": "apaylie5@nydailynews.com",
+    "gender": "Female",
+    "contrasena": "Uj9a8eYJGaul"
+  },
+  {
+    "id": "59-126-9658",
+    "first_name": "Stephania",
+    "last_name": "Otalora",
+    "email": "stph@gmail.com",
+    "gender": "Female",
+    "contrasena": "123456789"
+  }
+]
