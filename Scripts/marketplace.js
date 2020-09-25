@@ -2,15 +2,16 @@ url_perros =
   "https://gist.githubusercontent.com/EstebanCardenas/b007a57e4b8b1642b28205d208e06b72/raw/181775b9d1275611b35c3e162e90b2c28bb23a9d/p_perros.json";
 url_gatos =
   "https://gist.githubusercontent.com/EstebanCardenas/13c69a0b9ba7980710f65d8b6eed111d/raw/7e722a2a6e06a4033b89b21e36f4c5ec9ac42806/p_gatos.json";
-url_otros = "https://gist.githubusercontent.com/EstebanCardenas/deaaba292da78c03dbddb82263649cf1/raw/c2b0933430a953932138eb65bbf218a889166216/p_otros.json";
+url_otros =
+  "https://gist.githubusercontent.com/EstebanCardenas/deaaba292da78c03dbddb82263649cf1/raw/c2b0933430a953932138eb65bbf218a889166216/p_otros.json";
 
 const info = document.getElementById("info");
 const n_items = document.getElementById("n_items");
-var carrito = [];
-var items = 0;
+let carrito = [];
+let items = 0;
 
 function changeContent(url, filter) {
-  info.innerHTML = ""
+  info.innerHTML = "";
   fetch(url)
     .then((response) => response.json())
     .then((json) => {
@@ -32,66 +33,67 @@ function changeContent(url, filter) {
     });
 }
 
-changeContent(url_perros, ["Comida", "Juguetes", "Salud y bienestar"])
+changeContent(url_perros, ["Comida", "Juguetes", "Salud y bienestar"]);
 
 //event listeners
-const p_perros = document.getElementById("perros_but")
+const p_perros = document.getElementById("perros_but");
 p_perros.addEventListener("click", () => {
-  changeContent(url_perros, ["Comida", "Juguetes", "Salud y bienestar"])
-})
+  changeContent(url_perros, ["Comida", "Juguetes", "Salud y bienestar"]);
+});
 
-const p_gatos = document.getElementById("gatos_but")
+const p_gatos = document.getElementById("gatos_but");
 p_gatos.addEventListener("click", () => {
-  changeContent(url_gatos, ["Comida", "Juguetes", "Salud y bienestar"])
-})
+  changeContent(url_gatos, ["Comida", "Juguetes", "Salud y bienestar"]);
+});
 
-const p_otros = document.getElementById("otros_but")
+const p_otros = document.getElementById("otros_but");
 p_otros.addEventListener("click", () => {
-  changeContent(url_otros, [""])
-})
+  changeContent(url_otros, [""]);
+});
 
+// eslint-disable-next-line no-unused-vars
 function agregarProd(precio, nombre) {
-  item = carrito.find(item => item.nombre === nombre);
+  item = carrito.find((item) => item.nombre === nombre);
   if (item == undefined) {
-    carrito.push({ "nombre": nombre, "precio": precio, "cantidad": 1 });
-  }
-  else {
+    carrito.push({ nombre: nombre, precio: precio, cantidad: 1 });
+  } else {
     item.cantidad += 1;
   }
   items++;
-  if (items == 1)
-    n_items.innerHTML = `1 item`;
-  else {
-    n_items.innerHTML = `${items} items`
+  if (items == 1) {
+    n_items.innerHTML = "1 item";
+  } else {
+    n_items.innerHTML = `${items} items`;
   }
 }
 
 Array.from(document.getElementById("f_perros").children).forEach((el) => {
   el.addEventListener("click", () => {
-    let filter = el.innerHTML.toLowerCase()
-    filter = filter.charAt(0).toUpperCase() + filter.slice(1)
-    changeContent(url_perros, [filter])
-  })
-})
+    let filter = el.innerHTML.toLowerCase();
+    filter = filter.charAt(0).toUpperCase() + filter.slice(1);
+    changeContent(url_perros, [filter]);
+  });
+});
 
 Array.from(document.getElementById("f_gatos").children).forEach((el) => {
   el.addEventListener("click", () => {
-    let filter = el.innerHTML.toLowerCase()
-    filter = filter.charAt(0).toUpperCase() + filter.slice(1)
-    changeContent(url_gatos, [filter])
-  })
-})
+    let filter = el.innerHTML.toLowerCase();
+    filter = filter.charAt(0).toUpperCase() + filter.slice(1);
+    changeContent(url_gatos, [filter]);
+  });
+});
 
+// eslint-disable-next-line no-unused-vars
 function cargarCarrito() {
-  var element = document.querySelector(".carritoBody");
-  var parent = element.parentNode
+  let element = document.querySelector(".carritoBody");
+  let parent = element.parentNode;
   parent.removeChild(element);
   element = document.createElement("tbody");
   element.classList.add("carritoBody");
   parent.appendChild(element);
-  var total = 0;
-  for (var i = 0; i < carrito.length; i++) {
-    const tr = document.createElement("tr")
+  let total = 0;
+  for (let i = 0; i < carrito.length; i++) {
+    const tr = document.createElement("tr");
     const td1 = document.createElement("td");
     td1.innerText = carrito[i].nombre;
     const td2 = document.createElement("td");
@@ -110,6 +112,7 @@ function cargarCarrito() {
   const totalHTML = document.querySelector(".total");
   totalHTML.innerText = "Total: $" + total;
 }
+// eslint-disable-next-line no-unused-vars
 function cancelarPedido() {
   location.reload();
   carrito = [];

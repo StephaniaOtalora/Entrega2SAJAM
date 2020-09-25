@@ -11,13 +11,13 @@ async function readJson() {
 
 readJson().then((archivo) => {
   archivo.forEach((mascota) => {
-    var tarjetas = document.getElementsByClassName("cards")[0];
+    let tarjetas = document.getElementsByClassName("cards")[0];
 
     mascota.cuidados.forEach((cuidado) => {
       tarjetas.innerHTML += `<div class ="container-fluid" id="${
         mascota.mascota + cuidado.tipo + "Cards"
       }"> </div>`;
-      var tarjetasPaseadores = document.getElementById(
+      let tarjetasPaseadores = document.getElementById(
         mascota.mascota + cuidado.tipo + "Cards"
       );
 
@@ -108,11 +108,11 @@ readJson().then((archivo) => {
   mascotaCuidado = "Residencia";
   document.getElementById("PerrosResidenciaCards").hidden = false;
 });
+// eslint-disable-next-line no-unused-vars
 function cambiarPaseadores(tipo, cuidado) {
   document.getElementById(mascotaTipo + mascotaCuidado + "Cards").hidden = true;
   mascotaTipo = tipo;
   mascotaCuidado = cuidado;
-  console.log(mascotaTipo + mascotaCuidado + "Cards");
   document.getElementById(
     mascotaTipo + mascotaCuidado + "Cards"
   ).hidden = false;
