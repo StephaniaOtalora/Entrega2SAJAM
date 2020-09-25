@@ -34,7 +34,7 @@ readJson().then((archivo) => {
           <div class="paseadorcard mb-3 container-fluid h-auto">
             <div class="row">
               <div class="col-md-4">
-                <img src="${paseador.foto}" class="w-100 paseadorFoto mt-4">
+                <img src="${paseador.foto}" class="w-100 paseadorFoto mt-4", alt="Foto ${paseador.nombre}">
               </div>
               <div class="col-md-8">
                 <div class="paseadorinfo card-block px-3 mt-4">
@@ -45,11 +45,11 @@ readJson().then((archivo) => {
                   <p class="card-text">Rating: ${paseador.valoracion} estrellas.</p>
                   <div class="row justify-content-center mt-5">
                     <div class="col mb-3">
-                    <a class="btncards" data-toggle="modal" data-target="#ModalContacto${paseador.nombre}">Contactar</a>
+                    <button class="btncards" data-toggle="modal" data-target="#ModalContacto${paseador.nombre}">Contactar</button>
                     </div>
                     <div class="col">
 
-                    <a class="btncards" data-toggle="modal" data-target="#MasInfo${paseador.nombre}">Comentarios sobre ${paseador.nombre}</a>
+                    <button class="btncards" data-toggle="modal" data-target="#MasInfo${paseador.nombre}">Comentarios sobre ${paseador.nombre}</button>
                     </div>
 
                     <!-- Modal -->

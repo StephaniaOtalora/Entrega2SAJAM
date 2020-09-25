@@ -1,209 +1,346 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Pagina web correspondiente al proyecto de Programacion con Tecnologias Web"
+    />
+    <link rel="icon" type="image/png" href="../Imagenes/Logo.png" />
+    <title>Tienda</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Acme&family=Abel&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../Styles/styles.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="icon" type="image/png" href="../Imagenes/Logo.png" />
-  <title>Tienda</title>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-    crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-    crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-    crossorigin="anonymous"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Acme&family=Abel&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../Styles/styles.css" />
-</head>
-
-<body>
-  <!-- Modal -->
-  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-    aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Tu carrito de compras</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <table class="table">
-            <thead>
-              <tr>
-                <th scope="col">
-                  <h6>Producto</h6>
-                </th>
-                <th scope="col">Precio</th>
-                <th scope="col">Cantidad</th>
-                <th scope="col">Total</th>
-              </tr>
-            </thead>
-            <tbody class="carritoBody">
-            </tbody>
-          </table>
-          <h6 class="total">Total: $0</h6>
-        </div>
-        <div class="modal-footer">
-          <button onclick="cancelarPedido()" type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar
-            pedido</button>
-          <button type="button" class="btn btn-primary">Pagar</button>
+  <body>
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="exampleModal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">
+              Tu carrito de compras
+            </h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">
+                    <h6>Producto</h6>
+                  </th>
+                  <th scope="col">Precio</th>
+                  <th scope="col">Cantidad</th>
+                  <th scope="col">Total</th>
+                </tr>
+              </thead>
+              <tbody class="carritoBody"></tbody>
+            </table>
+            <h6 class="total">Total: $0</h6>
+          </div>
+          <div class="modal-footer">
+            <button
+              onclick="cancelarPedido()"
+              type="button"
+              class="btn btn-secondary"
+              data-dismiss="modal"
+            >
+              Cancelar pedido
+            </button>
+            <button type="button" class="btn btn-primary">Pagar</button>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-  <div class="container-fluid">
-    <header class="letra2">
-      <div class="row">
-        <nav class="navbar navbar-expand-lg menu">
-          <img class="navbar-brand" src="../Imagenes/Logo.png" alt="Logo" width="3%" />
-
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <svg width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-              <path fill-rule="evenodd"
-                d="M2.5 11.5A.5.5 0 0 1 3 11h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 3 7h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 3 3h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z" />
-            </svg>
-          </button>
-
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-              <li class="nav-item">
-                <a class="nav-link menu1" href="../InicioSesion/indexConInicio.html">Inicio <span
-                    class="sr-only">(current)</span></a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link menu1 active" href="../Tienda/Tienda.html">Tienda</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link menu1" href="../Paseadores/paseadores.html">
-                  Solicita un Cuidador
-                </a>
-              </li>
-            </ul>
-
-            <div class="row izq text-right">
-              <a href="../index.html">
-                <button class="btn menu2 hvr-shadow" type="button">Cerrar Sesión</button>
-              </a>
-            </div>
-          </div>
-        </nav>
-      </div>
-    </header>
-
-    <!--Barra izquierda-->
-    <main>
-      <div class="container-fluid">
-        <hr>
-        <h1 class="text-center cafe">
-          <img class="navbar-brand" src="../Imagenes/la-tienda-de-animales.png" alt="Logo" width="5%" />
-          Productos disponibles
-          <img class="navbar-brand" src="../Imagenes/la-tienda-de-animales.png" alt="Logo" width="5%" />
-        </h1>
-        <hr>
+    <div class="container-fluid">
+      <header class="letra2">
         <div class="row">
-          <div style="background-color: #d9c5b4" class="col-sm-12 col-md-3">
-            <hr>
-            <h3 class="text-center">Lista de articulos</h3>
-            <hr>
-            <p class="text-center">Ver productos selecionados</p>
-            <div class="text-center">
-              <a onclick="cargarCarrito()" href="#" data-toggle="modal" data-target="#exampleModal" class="cafe">
-                <img class="navbar-brand" src="../Imagenes/carro-de-la-compra.png" alt="Logo" width="7%" />
-                <strong id="n_items">0 artículos</strong>
-              </a></div>
-            <hr>
-            <h4 class="text-center">Categorias</h4>
-            <hr>
-            <div class="accordion" id="categorias">
-              <div class="card-header" id="headingOne">
-                <h2 class="mb-0">
-                  <button class="btn rounded-0 btn-block filtroNombre" type="button" data-toggle="collapse"
-                    data-target="#perros" aria-expanded="true" aria-controls="perros" id="perros_but">
-                    Perros
-                  </button>
-                </h2>
-              </div>
+          <nav class="navbar navbar-expand-lg menu">
+            <img
+              class="navbar-brand"
+              src="../Imagenes/Logo.png"
+              alt="Logo"
+              width="3%"
+            />
 
-              <div id="perros" class="collapse multi-collapse" aria-labelledby="headingOne" data-parent="#categorias">
-                <div class="listafiltro list-group" id="f_perros">
-                  <a href="#" class="filtroitem list-group-item list-group-item-action">COMIDA</a>
-                  <a href="#" class="filtroitem list-group-item list-group-item-action">SALUD Y BIENESTAR</a>
-                  <a href="#" class="filtroitem list-group-item list-group-item-action">JUGUETES</a>
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-toggle="collapse"
+              data-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <svg
+                width="1em"
+                height="1em"
+                viewBox="0 0 16 16"
+                fill="currentColor"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M2.5 11.5A.5.5 0 0 1 3 11h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 3 7h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 3 3h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"
+                />
+              </svg>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                <li class="nav-item">
+                  <a
+                    class="nav-link menu1"
+                    href="../InicioSesion/indexConInicio.html"
+                    >Inicio <span class="sr-only">(current)</span></a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link menu1 active" href="../Tienda/Tienda.html"
+                    >Tienda</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a
+                    class="nav-link menu1"
+                    href="../Paseadores/paseadores.html"
+                  >
+                    Solicita un Cuidador
+                  </a>
+                </li>
+              </ul>
+
+              <div class="row izq text-right">
+                <a href="../index.html">
+                  <button class="btn menu2 hvr-shadow" type="button">
+                    Cerrar Sesión
+                  </button>
+                </a>
+              </div>
+            </div>
+          </nav>
+        </div>
+      </header>
+
+      <!--Barra izquierda-->
+      <main>
+        <div class="container-fluid">
+          <hr />
+          <h1 class="text-center cafe">
+            <img
+              class="navbar-brand"
+              src="../Imagenes/la-tienda-de-animales.png"
+              alt="Logo"
+              width="5%"
+            />
+            Productos disponibles
+            <img
+              class="navbar-brand"
+              src="../Imagenes/la-tienda-de-animales.png"
+              alt="Logo"
+              width="5%"
+            />
+          </h1>
+          <hr />
+          <div class="row">
+            <div style="background-color: #d9c5b4" class="col-sm-12 col-md-3">
+              <hr />
+              <h3 class="text-center">Lista de articulos</h3>
+              <hr />
+              <p class="text-center">Ver productos selecionados</p>
+              <div class="text-center">
+                <a
+                  onclick="cargarCarrito()"
+                  href="#"
+                  data-toggle="modal"
+                  data-target="#exampleModal"
+                  class="cafe"
+                >
+                  <img
+                    class="navbar-brand"
+                    src="../Imagenes/carro-de-la-compra.png"
+                    alt="Logo"
+                    width="7%"
+                  />
+                  <strong id="n_items">0 artículos</strong>
+                </a>
+              </div>
+              <hr />
+              <h4 class="text-center">Categorias</h4>
+              <hr />
+              <div class="accordion" id="categorias">
+                <div class="card-header" id="headingOne">
+                  <h2 class="mb-0">
+                    <button
+                      class="btn rounded-0 btn-block filtroNombre"
+                      type="button"
+                      data-toggle="collapse"
+                      data-target="#perros"
+                      aria-expanded="true"
+                      aria-controls="perros"
+                      id="perros_but"
+                    >
+                      Perros
+                    </button>
+                  </h2>
+                </div>
+
+                <div
+                  id="perros"
+                  class="collapse multi-collapse"
+                  aria-labelledby="headingOne"
+                  data-parent="#categorias"
+                >
+                  <div class="listafiltro list-group" id="f_perros">
+                    <a
+                      href="#"
+                      class="filtroitem list-group-item list-group-item-action"
+                      >COMIDA</a
+                    >
+                    <a
+                      href="#"
+                      class="filtroitem list-group-item list-group-item-action"
+                      >SALUD Y BIENESTAR</a
+                    >
+                    <a
+                      href="#"
+                      class="filtroitem list-group-item list-group-item-action"
+                      >JUGUETES</a
+                    >
+                  </div>
+                </div>
+                <div class="card-header" id="headingOne">
+                  <h2 class="mb-0">
+                    <button
+                      class="btn rounded-0 btn-block filtroNombre"
+                      type="button"
+                      data-toggle="collapse"
+                      data-target="#gatos"
+                      aria-expanded="true"
+                      aria-controls="gatos"
+                      id="gatos_but"
+                    >
+                      Gatos
+                    </button>
+                  </h2>
+                </div>
+
+                <div
+                  id="gatos"
+                  class="collapse multi-collapse"
+                  aria-labelledby="headingOne"
+                  data-parent="#categorias"
+                >
+                  <div class="listafiltro list-group" id="f_gatos">
+                    <a
+                      href="#"
+                      class="filtroitem list-group-item list-group-item-action"
+                      >COMIDA</a
+                    >
+                    <a
+                      href="#"
+                      class="filtroitem list-group-item list-group-item-action"
+                      >SALUD Y BIENESTAR</a
+                    >
+                    <a
+                      href="#"
+                      class="filtroitem list-group-item list-group-item-action"
+                      >JUGUETES</a
+                    >
+                  </div>
+                </div>
+                <div class="card-header" id="headingOne">
+                  <h2 class="mb-0">
+                    <button
+                      class="btn rounded-0 btn-block filtroNombre"
+                      type="button"
+                      data-toggle="collapse"
+                      data-target="#otros"
+                      aria-expanded="true"
+                      aria-controls="otros"
+                      id="otros_but"
+                    >
+                      Otros
+                    </button>
+                  </h2>
                 </div>
               </div>
-              <div class="card-header" id="headingOne">
-                <h2 class="mb-0">
-                  <button class="btn rounded-0 btn-block filtroNombre" type="button" data-toggle="collapse"
-                    data-target="#gatos" aria-expanded="true" aria-controls="gatos" id="gatos_but">
-                    Gatos
-                  </button>
-                </h2>
-              </div>
-
-              <div id="gatos" class="collapse multi-collapse" aria-labelledby="headingOne" data-parent="#categorias">
-                <div class="listafiltro list-group" id="f_gatos">
-                  <a href="#" class="filtroitem list-group-item list-group-item-action">COMIDA</a>
-                  <a href="#" class="filtroitem list-group-item list-group-item-action">SALUD Y BIENESTAR</a>
-                  <a href="#" class="filtroitem list-group-item list-group-item-action">JUGUETES</a>
+            </div>
+            <br />
+            <!--Perros--->
+            <div class="col align-middle">
+              <div class="container-fluid">
+                <div class="row" id="info">
+                  <div class="card-group" id="info"></div>
                 </div>
-              </div>
-              <div class="card-header" id="headingOne">
-                <h2 class="mb-0">
-                  <button class="btn rounded-0 btn-block filtroNombre" type="button" data-toggle="collapse"
-                    data-target="#otros" aria-expanded="true" aria-controls="otros" id="otros_but">
-                    Otros
-                  </button>
-                </h2>
               </div>
             </div>
           </div>
-          <br />
-          <!--Perros--->
-          <div class="col align-middle">
-            <div class="container-fluid">
-              <div class="row" id="info">
-                <div class="card-group" id="info"></div>
-              </div>
-            </div>
+        </div>
+      </main>
 
+      <footer>
+        <div class="row footer">
+          <div class="col">
+            <h6>Contáctanos</h6>
+            <p>
+              Tel: 3000000<br />
+              Correo:
+              <a class="correo" href="mailto: pets@gmail.com">pets@gmail.com</a>
+            </p>
+          </div>
+          <div class="col">
+            <img src="../Imagenes/Logo.png" alt="Logo" width="100px" />
           </div>
         </div>
-      </div>
-
-    </main>
-
-    <footer>
-      <div class="row footer">
-        <div class="col">
-          <h6>Contáctanos</h6>
-          <p>
-            Tel: 3000000<br />
-            Correo:
-            <a class="correo" href="mailto: pets@gmail.com">pets@gmail.com</a>
-          </p>
-        </div>
-        <div class="col">
-          <img src="../Imagenes/Logo.png" alt="Logo" width="100px" />
-        </div>
-      </div>
-    </footer>
-  </div>
-  <div class="container">
-    <div style="background-color: black" class="row">
-      <div class="col"></div>
+      </footer>
     </div>
-  </div>
-</body>
-<script src="../Scripts/marketplace.js"></script>
-<script src="../Scripts/index.js"></script>
-
-
+    <div class="container">
+      <div style="background-color: black" class="row">
+        <div class="col"></div>
+      </div>
+    </div>
+  </body>
+  <script src="../Scripts/marketplace.js"></script>
+  <script src="../Scripts/index.js"></script>
 </html>

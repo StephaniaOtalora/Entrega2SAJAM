@@ -7,17 +7,18 @@
   --beige: #f2e3d5;
   --breakpoint-sm: 240 px;
 }
-.color1{
-color: var(--beige);
-};
+.color1 {
+  color: var(--beige);
+}
 .paseadorFoto {
   height: 80%;
 }
 .btncards {
+  border-style: ridge;
   margin: auto;
   background-color: var(--cream);
   color: var(--brown);
-  height: 40px;
+  height: 50px;
   width: 140px;
   display: flex;
   text-align: center;
@@ -25,15 +26,19 @@ color: var(--beige);
   align-items: center;
 }
 
+.btncards:hover {
+  color: black;
+}
+
 .paseadorinfo {
   margin-bottom: 2em;
 }
 
-.filtroNombre{
-  font-size:max(1vw, 17px);
+.filtroNombre {
+  font-size: max(1vw, 17px);
 }
 .listafiltro {
-  font-size:max(1vw, 15px);
+  font-size: max(1vw, 15px);
   text-align: center;
   justify-content: center;
   align-items: center;
@@ -51,7 +56,7 @@ color: var(--beige);
   background-color: var(--brown);
   color: white;
 }
-.dorado{
+.dorado {
   color: var(--lightBrown);
 }
 
